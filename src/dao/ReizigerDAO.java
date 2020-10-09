@@ -5,10 +5,10 @@ import domein.Reiziger;
 import java.sql.SQLException;
 import java.util.List;
 
-// Wordt geimplementeerd door ReizigerDAOPsql
+// Wordt geimplementeerd door ReizigerDAOHibernate
 public interface ReizigerDAO {
 
-    // Alle functies die ReizigerDAOPsql moet overnemen
+    // Alle functies die ReizigerDAOHibernate moet overnemen
     boolean save(Reiziger reiziger) throws SQLException;
 
     boolean update(Reiziger reiziger) throws SQLException;

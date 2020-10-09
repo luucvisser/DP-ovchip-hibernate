@@ -2,50 +2,44 @@ import dao.AdresDAO;
 import dao.OVChipkaartDAO;
 import dao.ProductDAO;
 import dao.ReizigerDAO;
-import daopsql.AdresDAOPsql;
-import daopsql.OVChipkaartDAOPsql;
-import daopsql.ProductDAOPsql;
-import daopsql.ReizigerDAOPsql;
 import domein.Adres;
 import domein.OVChipkaart;
-import dbconnection.DBConnection;
 import domein.Product;
 import domein.Reiziger;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        // Maakt een database connectie
-        Connection connection = DBConnection.getConnection();
-
-        // Maakt objecten aan
-        ReizigerDAOPsql rdao = new ReizigerDAOPsql(connection);
-        AdresDAOPsql adao = new AdresDAOPsql(connection);
-        OVChipkaartDAOPsql ovdao = new OVChipkaartDAOPsql(connection);
-        ProductDAOPsql pdao = new ProductDAOPsql(connection);
-
-        // Set attributen voor de objecten
-        rdao.setAdao(adao);
-        rdao.setOvdao(ovdao);
-
-        adao.setRdao(rdao);
-
-        ovdao.setRdao(rdao);
-        ovdao.setPdao(pdao);
-
-        pdao.setOvdao(ovdao);
-
-        // Roept de test functies aan
-        testReizigerDAO(rdao);
-        testAdresDAO(adao, rdao);
-        testOVChipkaartDAO(ovdao, rdao);
-        testProductDAO(pdao, ovdao, rdao);
-
-        // Sluit de database connectie
-        connection.close();
+//        // Maakt een database connectie
+//        Connection connection = DBConnection.getConnection();
+//
+//        // Maakt objecten aan
+//        ReizigerDAOHibernate rdao = new ReizigerDAOHibernate(connection);
+//        AdresDAOHibernate adao = new AdresDAOHibernate(connection);
+//        OVChipkaartDAOHibernate ovdao = new OVChipkaartDAOHibernate(connection);
+//        ProductDAOHibernate pdao = new ProductDAOHibernate(connection);
+//
+//        // Set attributen voor de objecten
+//        rdao.setAdao(adao);
+//        rdao.setOvdao(ovdao);
+//
+//        adao.setRdao(rdao);
+//
+//        ovdao.setRdao(rdao);
+//        ovdao.setPdao(pdao);
+//
+//        pdao.setOvdao(ovdao);
+//
+//        // Roept de test functies aan
+//        testReizigerDAO(rdao);
+//        testAdresDAO(adao, rdao);
+//        testOVChipkaartDAO(ovdao, rdao);
+//        testProductDAO(pdao, ovdao, rdao);
+//
+//        // Sluit de database connectie
+//        connection.close();
     }
 
     private static void testReizigerDAO(ReizigerDAO rdao) throws SQLException {

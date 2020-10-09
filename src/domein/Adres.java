@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.sql.SQLException;
 
 @Entity
+@Table(name = "Adres")
 public class Adres {
     @Id
     @Column(name = "adres_id")
@@ -13,7 +14,8 @@ public class Adres {
     private String straat;
     private String woonplaats;
 
-    @OneToOne(mappedBy = "adres")
+    @OneToOne
+    @JoinColumn(name = "reiziger_id")
     private Reiziger reiziger;
 
     // Maakt een adres object aan

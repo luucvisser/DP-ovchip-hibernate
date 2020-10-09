@@ -7,10 +7,10 @@ import domein.Reiziger;
 import java.sql.SQLException;
 import java.util.List;
 
-// Wordt geimplementeerd door ProductDAOPsql
+// Wordt geimplementeerd door ProductDAOHibernate
 public interface ProductDAO {
 
-    // Alle functies die ProductDAOPsql moet overnemen
+    // Alle functies die ProductDAOHibernate moet overnemen
     boolean save(Product product) throws SQLException;
 
     boolean update(Product product) throws SQLException;

@@ -6,10 +6,10 @@ import domein.Reiziger;
 import java.sql.SQLException;
 import java.util.List;
 
-// Wordt geimplementeerd door OVChipkaartDAOPsql
+// Wordt geimplementeerd door OVChipkaartDAOHibernate
 public interface OVChipkaartDAO {
 
-    // Alle functies die OVChipkaartDAOPsql moet overnemen
+    // Alle functies die OVChipkaartDAOHibernate moet overnemen
     boolean save(OVChipkaart ov) throws SQLException;
 
     boolean update(OVChipkaart ov) throws SQLException;
